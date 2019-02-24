@@ -1,20 +1,19 @@
-<?php 
+<?php
+
 namespace Adamhut\ChuckNorrisJokes;
 
-
-class JokeFactory{
-
+class JokeFactory
+{
     protected $jokes = [
         'Chuck Norris counted to infinity... Twice',
         'Chuck Norris\' tears cure cancer. Too bad he has never cried.',
         'Chuck Norris does not wear a condom. Because there is no such thing as protection from Chuck Norris.',
-        'If you can see Chuck Norris, he can see you. If you can\'t see Chuck Norris you may be only seconds away from death'
+        'If you can see Chuck Norris, he can see you. If you can\'t see Chuck Norris you may be only seconds away from death',
     ];
 
     public function __construct(array $jokes = null)
     {
-        if($jokes)
-        {
+        if ($jokes) {
             $this->jokes = $jokes;
         }
     }
@@ -24,15 +23,13 @@ class JokeFactory{
         return $this->jokes[array_rand($this->jokes)];
     }
 
-    public function getRandomJokes($amount=1)
+    public function getRandomJokes($amount = 1)
     {
         $jokes = [];
-        foreach(range(0,$amount) as $i)
-        {
+        foreach (range(0, $amount) as $i) {
             $jokes[] = $this->getRandomJoke();
         }
 
         return $jokes;
     }
-
 }
