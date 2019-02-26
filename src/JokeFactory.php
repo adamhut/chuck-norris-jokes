@@ -4,8 +4,6 @@ namespace Adamhut\ChuckNorrisJokes;
 
 use GuzzleHttp\Client;
 
-
-
 class JokeFactory
 {
     // protected $jokes = [
@@ -18,17 +16,17 @@ class JokeFactory
 
     protected $client;
 
-    public function __construct(Client $client=null)
+    public function __construct(Client $client = null)
     {
         $this->client = $client ?? new Client();
     }
 
     public function getRandomJoke()
     {
-        $response = $this->client->request('GET',self::API_ENDPOINT);
-        
+        $response = $this->client->request('GET', self::API_ENDPOINT);
+
         $t = $response->getBody()->getContents();
-        
+
         $joke = json_decode($t);
 
         return $joke->value->joke;
@@ -45,4 +43,3 @@ class JokeFactory
         return $jokes;
     }
 }
-

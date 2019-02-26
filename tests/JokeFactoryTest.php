@@ -3,12 +3,10 @@
 namespace Adamhut\ChuckNorrisJokes\Tests;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Handler\MockHandler;
 use Adamhut\ChuckNorrisJokes\JokeFactory;
 
 class JokeFactoryTest extends TestCase
@@ -58,9 +56,6 @@ class JokeFactoryTest extends TestCase
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertSame( 'Chuck Norris is not Irish. His hair is soaked in the blood of his victims.', $joke);
-
+        $this->assertSame('Chuck Norris is not Irish. His hair is soaked in the blood of his victims.', $joke);
     }
-
-    
 }
