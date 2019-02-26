@@ -19,6 +19,7 @@ composer require adamhut/chuck-norris-jokes
 use Adamhut\ChuckNorrisJokes\JokeFactory;    
 
 $jokes = new JokeFactory();
+
 $joke = $jokes->getRandomJoke();
 
 ```
