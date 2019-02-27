@@ -8,10 +8,8 @@ use Adamhut\ChuckNorrisJokes\JokeFactory;
 use Adamhut\ChuckNorrisJokes\Console\ChuckNorrisJoke;
 use Adamhut\ChuckNorrisJokes\Http\Controllers\ChuckNorrisController;
 
-
-class ChuckNorrisJokesServiceProvider extends ServiceProvider 
+class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
-
     public function boot()
     {
         if($this->app->runningInConsole()){
@@ -37,13 +35,11 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind('chuck-norris',function(){
+        $this->app->bind('chuck-norris', function () {
             return new JokeFactory();
         });
 
         $this->mergeConfigFrom(__DIR__.'/../config/chuck-norris.php','chuck-norris');
         
     }
-    
-
 }
