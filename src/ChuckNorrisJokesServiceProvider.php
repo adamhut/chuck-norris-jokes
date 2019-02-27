@@ -3,23 +3,17 @@
 namespace Adamhut\ChuckNorrisJokes;
 
 use Illuminate\Support\ServiceProvider;
-use Adamhut\ChuckNorrisJokes\JokeFactory;
 
-
-class ChuckNorrisJokesServiceProvider extends ServiceProvider 
+class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
-
     public function boot()
     {
-        
     }
 
     public function register()
     {
-        $this->app->bind('chuck-norris',function(){
+        $this->app->bind('chuck-norris', function () {
             return new JokeFactory();
         });
     }
-    
-
 }
