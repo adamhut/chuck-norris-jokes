@@ -24,6 +24,18 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
-    }    
+        "phpunit/phpunit": "^7.5",
+        "orchestra/testbench": "^3.8"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Adamhut\\ChuckNorrisJokes\\ChuckNorrisJokesServiceProvider"
+            ],
+            "aliases": {
+                "ChuckNorris": "Adamhut\\DebugbChuckNorrisJokes\\Facades\\ChuckNorris"
+            }
+        }
+    }
+
 }
