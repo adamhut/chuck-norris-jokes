@@ -1,13 +1,12 @@
 <?php
+
 namespace Adamhut\ChuckNorrisJokes\Console;
 
 use Illuminate\Console\Command;
-use Adamhut\ChuckNorrisJokes\JokeFactory;
 use Adamhut\ChuckNorrisJokes\Facades\ChuckNorris;
 
-
-class ChuckNorrisJoke extends Command{
-
+class ChuckNorrisJoke extends Command
+{
     /**
      * The name and signature of the console command.
      *
@@ -21,7 +20,6 @@ class ChuckNorrisJoke extends Command{
      * @var string
      */
     protected $description = 'Output a Chuck Norris Joke.';
-
 
     /**
      * Create a new command instance.
@@ -42,6 +40,5 @@ class ChuckNorrisJoke extends Command{
     {
         $joke = ChuckNorris::getRandomJoke();
         $this->info($joke);
-        
     }
 }
